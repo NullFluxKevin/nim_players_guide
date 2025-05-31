@@ -1,0 +1,5 @@
+echo "Hello!"
+echo "I'm learning Nim!"
+echo "It's a beautiful language!"
+echo "Concise, expressive, and..."
+echo "Blazing FAST!"
