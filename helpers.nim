@@ -1,3 +1,4 @@
+import sequtils
 import strutils
 
 proc askForInput*(prompt: string): string =
@@ -62,4 +63,14 @@ proc askForIntInRange*(prompt: string, min: int, max: int): int =
     else:
       echo "Input out of range, try again."
 
+
+proc showMenuFromEnum*(enu: typedesc[enum]) = 
+  for e in enu.toSeq:
+    echo ord(e), ": ", e
+
+
+proc pickFromEnum*[T: enum](prompt: string): T = 
+  showMenuFromEnum(T)
+  let choice = askForIntInRange("Pick soup type", ord(low(T)), ord(high(T)))
+  T(choice)
 
