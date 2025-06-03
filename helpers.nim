@@ -71,6 +71,6 @@ proc showMenuFromEnum*(enu: typedesc[enum]) =
 
 proc pickFromEnum*[T: enum](prompt: string): T = 
   showMenuFromEnum(T)
-  let choice = askForIntInRange("Pick soup type", ord(low(T)), ord(high(T)))
+  let choice = askForIntInRange(prompt, ord(low(T)), ord(high(T)))
   T(choice)
 
